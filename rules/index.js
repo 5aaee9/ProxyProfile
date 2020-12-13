@@ -26,6 +26,9 @@ module.exports = [
     // 跟踪器
     ...require('./software/tracker'),
 
+    // HyperV
+    ...require('./utils/hyperv'),
+
     {
         type: 'FINAL',
         proxy: 'Proxy'
