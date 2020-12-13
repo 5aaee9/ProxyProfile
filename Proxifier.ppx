@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxifierProfile version="102" platform="Windows" product_id="0" product_minver="400">
+    <Options>
+        <Resolve>
+            <AutoModeDetection enabled="false"/>
+            <ViaProxy enabled="true"/>
+            <ExclusionList OnlyFromListMode="false">%ComputerName%; localhost; *.local</ExclusionList>
+            <DnsUdpMode>0</DnsUdpMode>
+        </Resolve>
+        <Encryption mode="basic"/>
+        <ConnectionLoopDetection enabled="false" resolve="true"/>
+        <ProcessOtherUsers enabled="true"/>
+        <ProcessServices enabled="false"/>
+        <HandleDirectConnections enabled="false"/>
+        <HttpProxiesSupport enabled="false"/>
+    </Options>
+    <ProxyList>
+        <Proxy id="100" type="SOCKS5">
+            <Options>48</Options>
+            <Port>2801</Port>
+            <Address>127.0.0.1</Address>
+            <Label>Proxy</Label>
+        </Proxy>
+    </ProxyList>
+    <ChainList/>
+    <RuleList>
+        <Rule enabled="true">
+            <Name>DOMAIN_KEYWORD-Direct</Name>
+            <Targets>*bilibili*</Targets>
+            <Action type="Direct"/>
+        </Rule>
+        <Rule enabled="true">
+            <Name>DOMAIN_SUFFIX-Direct</Name>
+            <Targets>*.acg.tv; *.acgvideo.com; *.b23.tv; *.biliapi.com; *.biliapi.net; *.bilibili.com; *.biligame.com; *.biligame.net; *.hdslb.com; *.im9.com; *.music.126.net; *.music.163.com; *.s-microsoft.com; *.microsoft.com; *.live.com; *.xboxlive.com; *.msedge.net; *.office.com; *.office365.com; *.azureedge.net; *.bing.com; *.msn.com; *.lceda.cn; *.jlc.com; *.sz-jlc.com</Targets>
+            <Action type="Direct"/>
+        </Rule>
+        <Rule enabled="true">
+            <Name>PROCESS_NAME-Direct</Name>
+            <Applications>ClashX; shadowsocksr.exe; xunyou.exe; pcassit.exe; vmconnect.exe</Applications>
+            <Action type="Direct"/>
+        </Rule>
+        <Rule enabled="true">
+            <Name>IP_RANGE-Direct</Name>
+            <Targets>127.0.0.0 - 127.255.255.255; 192.168.0.0 - 192.168.255.255; 10.0.0.0 - 10.255.255.255; 172.16.0.0 - 172.31.255.255</Targets>
+            <Action type="Direct"/>
+        </Rule>
+        <Rule enabled="true">
+            <Name>DOMAIN_SUFFIX-Block</Name>
+            <Targets>*.footprintdns.com</Targets>
+            <Action type="Block"/>
+        </Rule>
+        <Rule enabled="true">
+            <Name>Default</Name>
+            <Action type="Proxy">100</Action>
+        </Rule>
+    </RuleList>
+</ProxifierProfile>
