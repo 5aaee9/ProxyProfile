@@ -23,6 +23,9 @@ module.exports = [
     // 深圳嘉立创
     ...require('./software/jlc'),
 
+    // 跟踪器
+    ...require('./software/tracker'),
+
     {
         type: 'FINAL',
         proxy: 'Proxy'
