@@ -1,0 +1,22 @@
+{
+    "name": "ProxyProfile",
+    "version": "0.0.0",
+    "main": "index.js",
+    "repository": "git@github.com:Indexyz/ProxyProfile.git",
+    "author": "Indexyz <jiduye@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "lint": "eslint --ext .js,.ts ."
+    },
+    "dependencies": {
+        "@indexyz/bumblebee": "^0.0.3",
+        "fs-extra": "^9.0.1"
+    },
+    "devDependencies": {
+        "eslint": "^7.15.0",
+        "eslint-config-indexyz": "^1.0.0"
+    },
+    "engines": {
+        "node": ">=11.14.0"
+    }
+}
